@@ -16,7 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from quizz.views import *
+from django.conf import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("", home, name='home'),
+    path('add_question/', add_ques, name='add_ques'),
+    path('login/', login, name='login'),
+    path('logout/', logout, name='logout'),
+    
 ]
+urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
