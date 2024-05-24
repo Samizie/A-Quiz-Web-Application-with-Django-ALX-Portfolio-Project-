@@ -8,7 +8,8 @@ The model is going to be a class based model named (QuizModel) containing:
 
 Creating the Views
 
-The views contains 
+The views contains
+
 *A Home Function*
 -takes in request as post method
 -contains variables
