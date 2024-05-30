@@ -1,0 +1,18 @@
+{% extends 'Quiz/dependencies.html' %}
+{% load static %}
+{% block content %}
+<div class="container jumbotron">
+    <form method="POST" action="" >
+        {% csrf_token %}
+        <table>
+        {{form.as_table}}
+        <tr>
+            <td></td>
+        </tr>
+       
+        <td><input class="btn btn-success" type="submit" value="Register Account"/></td>
+        <p>Already have an account?<a href='{% url 'login' %}'> LogIn </a></p>
+        </table>
+    </form>
+</div>
+{% endblock %}

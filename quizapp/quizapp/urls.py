@@ -16,17 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from quizz.views import *
+from quizz import views
 from django.conf import settings
 from django.conf.urls.static import static
 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", home, name='home'),
-    path('add_question/', add_ques, name='add_ques'),
-    path('login/', login, name='login'),
-    path('logout/', logout, name='logout'),
+    path('', views.home, name='home'),
+    path('add_question/', views.add_ques, name='add_ques'),
+    path('login/', views.loginPage, name='login'),
+    path('logout/', views.logoutPage, name='logout'),
+    path('register', views.register, name='register'),
     
 ]
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
